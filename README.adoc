@@ -1,0 +1,3 @@
+= config
+Repository that variety configuration files, eg: vimrc, powershell profile, etc...
+
