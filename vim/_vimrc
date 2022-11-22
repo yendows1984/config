@@ -528,7 +528,9 @@ set matchpairs+=<:>
 " 2014/11/19 [水] 07:24:42 以下の1行をModified.CWDの表示が長いので.
 " set statusline=%<%t%m%r%h%w%=[%{getcwd()}]Enc=%{&fenc},TYPE=%Y,[col:%03v,line:%3l][%3p%%-%L]
 set statusline=%t%<%m%r%h%w%=Enc=%{&fenc},Typ=%Y[col:%03v,line:%3l,%3p%%-%L]
-
+" 2022/11/18 [金] ステータスラインは常に表示
+" default 1
+set laststatus=2
 " ----------------------------------------------------
 "   Purpose:
 "		Command history size up to 100.
