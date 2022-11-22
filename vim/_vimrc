@@ -357,14 +357,15 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
 "			:h strftime()
 "		strftime() Formats
 "			http://linuxjm.sourceforge.jp/html/LDP_man-pages/man3/strftime.3.html
+"			https://docs.ruby-lang.org/ja/latest/method/Time/i/strftime.html
 "	History:
 "		2014/05/13 [火] 02:36:15	Update,	Insert current date time.
 "		2014/05/16 [金] 23:01:30	Update,	<S-F5> types. 
 "   Note:
 " ----------------------------------------------------
 "inoremap <F5> <C-R>=strftime("%c")<CR>
-inoremap <F5> <C-R>=strftime("%Y/%m/%d [%a]")<CR>
-inoremap <S-F5> <C-R>=strftime("%Y/%m/%d [%a] %H:%M:%S")<CR>
+inoremap <F5> <C-R>=strftime("%F_%a")<CR>
+inoremap <S-F5> <C-R>=strftime("%F_%a_T%H%M%S")<CR>
 
 " ----------------------------------------------------
 "   Purpose:
