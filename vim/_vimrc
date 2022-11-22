@@ -847,3 +847,12 @@ function! ClearAllRegsters()
 let i=0| while (i<26) | exec 'let 
 			\@'.nr2char(i+(char2nr("a"))).'=""' | let i=i+1 | endwhile 
 endfunction
+"--------------------------------------------------
+call plug#begin('~/.vim/plugged')
+Plug 'brglng/vim-im-select'
+call plug#end()
+"--------------------------------------------------
+"--------------------------------------------------
+" vim-im-select settings:
+let g:im_select_default = 'com.google.inputmethod.Japanese.Roman'
+"--------------------------------------------------
