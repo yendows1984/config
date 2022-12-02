@@ -1,3 +1,4 @@
+Set-PSReadlineOption -EditMode Emacs
 Import-Module posh-git
 $GitPromptSettings.DefaultPromptSuffix = $('`n> ' * ($nestedPromptLevel + 1))
 function prompt {
