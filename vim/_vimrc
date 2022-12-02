@@ -357,14 +357,15 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
 "			:h strftime()
 "		strftime() Formats
 "			http://linuxjm.sourceforge.jp/html/LDP_man-pages/man3/strftime.3.html
+"			https://docs.ruby-lang.org/ja/latest/method/Time/i/strftime.html
 "	History:
 "		2014/05/13 [火] 02:36:15	Update,	Insert current date time.
 "		2014/05/16 [金] 23:01:30	Update,	<S-F5> types. 
 "   Note:
 " ----------------------------------------------------
 "inoremap <F5> <C-R>=strftime("%c")<CR>
-inoremap <F5> <C-R>=strftime("%Y/%m/%d [%a]")<CR>
-inoremap <S-F5> <C-R>=strftime("%Y/%m/%d [%a] %H:%M:%S")<CR>
+inoremap <F5> <C-R>=strftime("%F_%a")<CR>
+inoremap <S-F5> <C-R>=strftime("%F_%a_T%H%M%S")<CR>
 
 " ----------------------------------------------------
 "   Purpose:
@@ -528,7 +529,9 @@ set matchpairs+=<:>
 " 2014/11/19 [水] 07:24:42 以下の1行をModified.CWDの表示が長いので.
 " set statusline=%<%t%m%r%h%w%=[%{getcwd()}]Enc=%{&fenc},TYPE=%Y,[col:%03v,line:%3l][%3p%%-%L]
 set statusline=%t%<%m%r%h%w%=Enc=%{&fenc},Typ=%Y[col:%03v,line:%3l,%3p%%-%L]
-
+" 2022/11/18 [金] ステータスラインは常に表示
+" default 1
+set laststatus=2
 " ----------------------------------------------------
 "   Purpose:
 "		Command history size up to 100.
@@ -845,3 +848,12 @@ function! ClearAllRegsters()
 let i=0| while (i<26) | exec 'let 
 			\@'.nr2char(i+(char2nr("a"))).'=""' | let i=i+1 | endwhile 
 endfunction
+"--------------------------------------------------
+call plug#begin('~/.vim/plugged')
+Plug 'brglng/vim-im-select'
+call plug#end()
+"--------------------------------------------------
+"--------------------------------------------------
+" vim-im-select settings:
+let g:im_select_default = 'com.google.inputmethod.Japanese.Roman'
+"--------------------------------------------------
