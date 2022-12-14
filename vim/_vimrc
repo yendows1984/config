@@ -364,8 +364,8 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
 "   Note:
 " ----------------------------------------------------
 "inoremap <F5> <C-R>=strftime("%c")<CR>
-inoremap <F5> <C-R>=strftime("%F_%a")<CR>
-inoremap <S-F5> <C-R>=strftime("%F_%a_T%H%M%S")<CR>
+inoremap <F5> <C-R>=strftime("%F(%a)")<CR>
+inoremap <S-F5> <C-R>=strftime("%F(%a)T%H.%M.%S%z")<CR>
 
 " ----------------------------------------------------
 "   Purpose:
