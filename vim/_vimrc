@@ -4,6 +4,7 @@
 "   HelpReference:
 "*************************************************
 scriptencoding utf-8
+set encoding=utf-8
 
 "*************************************************
 "   Section:
@@ -364,9 +365,15 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
 "   Note:
 " ----------------------------------------------------
 "inoremap <F5> <C-R>=strftime("%c")<CR>
-inoremap <F5> <C-R>=strftime("%F(%a)")<CR>
-inoremap <S-F5> <C-R>=strftime("%F(%a)T%H.%M.%S%z")<CR>
+inoremap <F5> <C-R>=strftime("%Y-%m-%d")<CR>
+inoremap <C-F5> <C-R>=strftime("%Y-%m-%d(%a)")<CR>
+inoremap <S-F5> <C-R>=strftime("%Y-%m-%dT%H.%M.%S%z")<CR>
+inoremap <CS-F5> <C-R>=strftime("%Y-%m-%d(%a)T%H.%M.%S%z")<CR>
 
+nnoremap <F5> i<C-R>=strftime("%Y-%m-%d")<CR><ESC>
+nnoremap <C-F5> i<C-R>=strftime("%Y-%m-%d(%a)")<CR><ESC>
+nnoremap <S-F5> i<C-R>=strftime("%Y-%m-%dT%H.%M.%S%z")<CR><ESC>
+nnoremap <CS-F5> i<C-R>=strftime("%Y-%m-%d(%a)T%H.%M.%S%z")<CR><ESC>
 " ----------------------------------------------------
 "   Purpose:
 "		Then press <C-V> key, insert text from clipboard.
@@ -848,12 +855,12 @@ function! ClearAllRegsters()
 let i=0| while (i<26) | exec 'let 
 			\@'.nr2char(i+(char2nr("a"))).'=""' | let i=i+1 | endwhile 
 endfunction
-"--------------------------------------------------
-call plug#begin('~/.vim/plugged')
-Plug 'brglng/vim-im-select'
-call plug#end()
-"--------------------------------------------------
-"--------------------------------------------------
-" vim-im-select settings:
-let g:im_select_default = 'com.google.inputmethod.Japanese.Roman'
-"--------------------------------------------------
+""--------------------------------------------------
+"call plug#begin('~/.vim/plugged')
+"Plug 'brglng/vim-im-select'
+"call plug#end()
+""--------------------------------------------------
+""--------------------------------------------------
+"" vim-im-select settings:
+"let g:im_select_default = 'com.google.inputmethod.Japanese.Roman'
+""--------------------------------------------------
