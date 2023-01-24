@@ -8,3 +8,15 @@ function prompt {
     $prompt += & $GitPromptScriptBlock
     if ($prompt) { "$prompt" } else { " " }
 }
+
+
+function Get-DateISO8601ForFilename {
+    (Get-Date -f yyyy-MM-ddTHH.mm.ss%K) -replace ':',''
+}
+function Get-DateYMD {
+    Get-Date -f yyyy-MM-dd
+}
+
+
+Set-Alias datef -Value Get-DateISO8601ForFilename
+Set-Alias dateymd -Value Get-DateYMD
